@@ -1,0 +1,22 @@
+<div id="share-button"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{{asset '/js/share.min.js'}}"></script>
+<script>
+  new Share("#share-button", {
+    description: $(".post-title").html(),
+    networks: {
+      facebook: {
+        enabled: false
+      },
+      pinterest: {
+        enabled: false
+      },
+    }
+  });
+</script>
+{{#contentFor "head"}}
+<link rel="stylesheet" type="text/css" href="{{asset '/styles/rrssb.css'}}">
+<meta property="og:title" content="{{title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{excerpt}}..."/>
+{{/contentFor}}
